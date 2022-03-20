@@ -16,10 +16,10 @@ public class Movie {
     String runTime;
     String director;
     String cast;
-    int likes;
-    int dislike;
+    double like;
+    double dislike;
     
-    public Movie(String name, String rating, String synopsis, String date, String runTime, String director, String cast) {
+    public Movie(String name, String rating, String synopsis, String date, String runTime, String director, String cast, double like, double dislike) {
         this.name = name;
         this.rating = rating;
         this.synopsis = synopsis;
@@ -27,11 +27,10 @@ public class Movie {
         this.runTime = runTime;
         this.director = director;
         this.cast = cast;
+        this.like = like;
+        this.dislike = dislike;
     }
 
-    public Movie(String name, String pg, String string, String string0, String whoever, String emblunt) {
-   
-    }
     
     //write the other setters
     public void setName(String name) {
@@ -88,6 +87,21 @@ public class Movie {
     
     public String getCast(){
         return this.cast;
+    }
+    public void setLike(double like) {
+        this.like = like;
+    }
+    
+    public double getLike(){
+        return this.like;
+    }
+    
+    public  void setDislike(double dislike) {
+        this.dislike = dislike;
+    }
+    
+    public double getDislike(){
+        return this.dislike;
     }
     
 }
