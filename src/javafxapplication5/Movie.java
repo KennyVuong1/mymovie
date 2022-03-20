@@ -16,6 +16,8 @@ public class Movie {
     String runTime;
     String director;
     String cast;
+    int likes;
+    int dislike;
     
     public Movie(String name, String rating, String synopsis, String date, String runTime, String director, String cast) {
         this.name = name;
