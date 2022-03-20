@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafxapplication5.Movie;
 
+
 public class Controller implements Initializable {
 ObservableList list = FXCollections.observableArrayList();
     
@@ -62,6 +63,9 @@ ObservableList list = FXCollections.observableArrayList();
         Movie m4 = new Movie("Saw", "R18+", "Do you to play a little game", "28/09/1995", "120 minutes", "BlackCat", "Flawed People");
         movies.add(m4);
         listOfNames.getItems().add(m4.getName());
+        
+        
+        
     }
     
 
@@ -75,6 +79,22 @@ ObservableList list = FXCollections.observableArrayList();
         // Get input from user from screens 1 - 5
         // Make new movie object using input
         // Add new movie object into movies arraylist
+       
+        screen.setText(name.getText());        
+        screen1.setText("");
+        screen2.setText("");
+        screen3.setText("");
+        screen4.setText("");
+        screen5.setText("");
+        screen6.setText("");
+        
+        name.setText("");
+            
+            
+        
+        
+        
+       
     }
     
     // FIX
@@ -92,7 +112,7 @@ ObservableList list = FXCollections.observableArrayList();
         screen.setText("Nothing Selected");
                 }
         else{
-        screen.setText(movie+" selected");
+        screen.setText(movie);
             }
         for (Movie m : movies) {
             if (m.getName().equals(movie)) {
@@ -103,6 +123,28 @@ ObservableList list = FXCollections.observableArrayList();
                 screen5.setText(m.getDirector());
                 screen6.setText(m.getCast());
             }
+            
         }          
     } 
+
+    @FXML
+    private void addDetails(MouseEvent event) {
+        ArrayList<String> listDetails = new ArrayList<String>();
+        listDetails.add(screen.getText());
+        listDetails.add(screen1.getText());
+        listDetails.add(screen2.getText());
+        listDetails.add(screen3.getText());
+        listDetails.add(screen4.getText());
+        listDetails.add(screen5.getText());
+        listDetails.add(screen6.getText());
+        
+        
+        
+        
+        listOfNames.getItems().remove(listDetails.get(0));
+        Movie m5 = new Movie(listDetails.get(0), listDetails.get(1), listDetails.get(2), listDetails.get(3), listDetails.get(4), listDetails.get(5), listDetails.get(6));
+        movies.add(m5);
+        listOfNames.getItems().add(m5.getName());
+        
+    }
 }
